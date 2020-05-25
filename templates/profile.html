@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+<head>
+<title>Profile</title>
+<!-- for-meta-tags-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Health Plus Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-meta-tags-->
+	<link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+<link href="{% static 'css1/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css1/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" />
+			<link rel="stylesheet" href="{% static 'css1/jquery-ui.css' %}" />
+<link href="{% static 'css1/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css1/profile.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+<!--<link rel="stylesheet" href="{% static 'css/drvisit.css' %}" type="text/css">-->
+<!-- font-awesome icons -->
+<link href="{% static 'css1/font-awesome.css' %}" rel="stylesheet">
+<!-- //font-awesome icons -->
+<link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+</head>
+
+<body>
+<div class="main" id="home">
+<!-- banner -->
+		<div class="header_agileinfo">
+						<div class="w3_agileits_header_text">
+							<ul class="top_agile_w3l_info_icons">
+									<li><i class="fa fa-home" aria-hidden="true"></i>D.B.N Road,Batala</li>
+									<li class="second"><i class="fa fa-phone" aria-hidden="true"></i>7986887844</li>
+
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:ranjit45697@gmail.com">Ranjit45697@gmail.com</a></li>
+								</ul>
+
+						</div>
+						<div class="agileinfo_social_icons">
+							<ul class="agileits_social_list">
+								<li><a href="https://www.facebook.com/Jeet-962949457198185/" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="w3_agile_rss"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+			</div>
+
+		<div class="header-bottom">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<h1><a class="navbar-brand" href="index.html"><span>Diagnostic</span> <i class="fa fa-plus" aria-hidden="true"></i> <p>Service Portal</p></a></h1>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--sebastian">
+					<ul id="m_nav_list" class="m_nav menu__list">
+						<li class="m_nav_item menu__item" id="m_nav_item_1"> <a href="index" class="menu__link"> Home </a></li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="about" class="menu__link"> About Us </a> </li>
+<!--						<li class="m_nav_item menu__item menu__item&#45;&#45;current" id="moble_nav_item_4"> <a href="appointment.html" class="menu__link">Appointment  </a> </li>-->
+<!--						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="contact" class="menu__link"> Contact </a> </li>-->
+					</ul>
+				</nav>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+	 </div>
+</div>
+
+<body>
+
+	<div class="w3ls-banner">
+	<div class="heading">
+		<h1>Profile</h1>
+	</div>
+		<div class="container">
+			<div class="heading">
+<!--				<h2>Please Enter Patients Details</h2>-->
+<!--				<p>Fill the form below and submit your query we will contact you as soon as possible.</p>-->
+			</div>
+			<style>
+                    img {
+                      border-radius: 50%;
+                      height: 50%;
+                      width:200px
+}
+               </style>
+
+			<center><h2 >Profile Photo</h2></center><br>
+
+			<center><img src="static/images1/8th.jpg" ></center><br>
+			<label for="file_photo">Photo:</label>
+			<input type="file" name="file_photo" id="file_photo" multiple accept="image/gif, image/jpeg">
+
+
+			<div class="agile-form">
+				<form action="/" method="post">
+					<ul class="field-list">
+						<li>
+							<label class="form-label">
+								Full Name
+								<span class="form-required"> * </span>
+							</label>
+							<div class="form-input">
+								<input type="text" name="patient_name" placeholder="" required >
+							</div>
+						</li>
+
+						<li>
+							<label class="form-label">
+							   Mobile Number
+							   <span class="form-required"> * </span>
+							</label>
+							<div class="form-input">
+								<input type="text" name="mobile_number" placeholder="" required >
+							</div>
+						</li>
+						<li>
+							<label class="form-label">
+								Date Of Birth
+								<span class="form-required"> * </span>
+							</label>
+							<div class="form-input">
+								<input type="text" name="patient_name" placeholder="" required >
+							</div>
+						</li>
+						<li>
+							<label class="form-label">
+								Location
+								<span class="form-required"> * </span>
+							</label>
+							<div class="form-input">
+								<input type="text" name="patient_name" placeholder="" required >
+							</div>
+
+						</li>
+						<li>
+							<label class="form-label">
+							   E-Mail Address
+							   <span class="form-required"> * </span>
+							</label>
+							<div class="form-input">
+								<input type="email" name="email" placeholder="" required>
+
+							</div>
+						</li>
+
+					</ul>
+					<input type="submit" value="update">
+				</form>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" src="{% static 'js1/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js1/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+			<script src="{% static 'js1/jarallax.js' %}"></script>
+	<script src="{% static 'js1/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+
+	<script src="{% static 'js1/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+</body>
+</html>

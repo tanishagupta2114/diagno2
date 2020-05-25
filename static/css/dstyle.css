@@ -1,0 +1,29 @@
+body{
+    background-image:url("https://s3.amazonaws.com/cbi-research-portal-uploads/2018/08/28134147/GettyImages-10124125721.jpg");
+    background-size: cover;
+    background-attachment:fixed;
+    background-repeat: no-repeat;
+    }
+    .content h1 {
+    margin-top: 5% ;
+    margin-right:0px;
+    margin-left:380px;
+    margin-bottom:80px;
+    text-shadow:2px 2px 2px #000;
+    font-family:tahoma;
+    }
+    
+    .content{
+    color:pink;
+    width:800px;
+    height:380px;
+    padding:40px;
+    margin:12px auto;
+    float:right;
+    }
+    .content a{
+    margin-right:0px;
+    margin-left:550px;
+    margin-bottom:60px;
+    
+    }

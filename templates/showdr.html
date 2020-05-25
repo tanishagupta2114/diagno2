@@ -1,0 +1,192 @@
+ <!doctype html>
+ {% load static %}
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Health Plus Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-meta-tags-->
+	<link href="{% static 'vendor/font-awesome-4.7/css/font-awesome.min.css' %}" rel="stylesheet" media="all">
+<link href="{% static 'css/bootstrap1.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css1/wickedpicker.css' %}" rel="stylesheet" type='text/css' media="all" />
+	<link rel="stylesheet" href="{% static 'css1/jquery-ui.css' %}" />
+<link href="{% static 'css1/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<link href="{% static 'css/drcard.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
+
+<!-- font-awesome icons -->
+<link href="{% static 'css1/font-awesome.css' %}" rel="stylesheet">
+<!--	<link href="{% static 'css1/showpatient.css' %}" rel="stylesheet" type="text/css" media="all" />-->
+<!--	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+<!--	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>-->
+<!--	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>-->
+<!-- //font-awesome icons -->
+<link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+
+		<title>Doctor list show</title>
+
+
+
+ <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+<!--	<link rel="stylesheet" href="{% static 'css/jquery.hislide.min.css' %}" type="text/css">-->
+		</head>
+
+<div class="main" id="home">
+<!-- banner -->
+		<div class="header_agileinfo">
+						<div class="w3_agileits_header_text">
+							<ul class="top_agile_w3l_info_icons">
+									<li><i class="fa fa-home" aria-hidden="true"></i>D.B.N Road,Batala</li>
+									<li class="second"><i class="fa fa-phone" aria-hidden="true"></i>7986887844</li>
+
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:ranjit45697@gmail.com">{{user.email}}</a></li>
+								</ul>
+
+						</div>
+						<div class="agileinfo_social_icons">
+							<ul class="agileits_social_list">
+								<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+								<li><a href="#" class="w3_agile_rss"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+						<div class="clearfix"> </div>
+			</div>
+
+		<div class="header-bottom">
+			<nav class="navbar navbar-default">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				  </button>
+					<div class="logo">
+						<h1><a class="navbar-brand" href="index"><span>Diagnostic</span> <i class="fa fa-plus" aria-hidden="true"></i> <p>Service Portal</p></a></h1>
+					</div>
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+					<nav class="menu menu--sebastian">
+					<ul id="m_nav_list" class="m_nav menu__list">
+						<li class="m_nav_item menu__item" id="m_nav_item_1"> <a href="index" class="menu__link"> Home </a></li>
+						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="about" class="menu__link"> About Us </a> </li>
+<!--						<li class="m_nav_item menu__item" id="moble_nav_item_4"> <a href="logout" class="menu__link">Log Out  </a> </li>-->
+						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="contact" class="menu__link"> Contact </a> </li>
+					</ul>
+				</nav>
+
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+	 </div>
+</div>
+<!--<div class="banner1 jarallax">-->
+<!--		<div class="container">-->
+<!--			<img src="static/images1/banner2.jpg" alt=" " class="img-responsive" />-->
+<!--		</div>-->
+<!--	</div><br>-->
+
+	<div class="services-breadcrumb">
+<!--		<div class="container">-->
+
+
+				<center>Appointment</center>
+
+<!--		</div>-->
+	</div>
+
+
+	<div class="container" method="post">
+		{% csrf_token %}
+{% for d in x %}
+
+		<div class="card" >
+<!--					<img src="static/images/a1.jpg" class="card-img-top">-->
+			<div class="card-body">
+						 					<h4 class="card-title"><img src="{{ d.profilePicture.url }}" width="25%" height="200"/></h4>
+<!--                                            <p class="card-text"> specialization and experience</p>-->
+<!--						 					<button type="button" class="btn btn-success">Send Appointment Request</button>-->
+				<ul class="list-group">
+            <li class="list-group-item list-group-item-success"><i class="fa fa-user-circle-o"style="font-size:20px;"></i>  Dr. Name ={{d.firstname}}</li>
+            <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Experience ={{d.experience}}</li>
+            <li class="list-group-item list-group-item-success"><i class="fa fa-venus-mars"style="font-size:20px;"></i>   Gender ={{d.gender}}</li>
+            <li class="list-group-item list-group-item-success"><i class="fa fa-plus-circle"style="font-size:20px;"></i>   Specialization ={{d.specialized}}</li>
+					<li class="list-group-item list-group-item-success" name="fee1"><i class="fa fa-inr"style="font-size:20px;"></i>  Appointment fee ={{d.fee}}</li>
+					 <li class="list-group-item list-group-item-success"><i class="fa fa-location-arrow"style="font-size:20px;"></i>   Location ={{d.state}}({{d.city}})</li>
+					<center><a href="{% url 'paymentMode' pk=d.pk %}"><button class="button" style="vertical-align:middle" id="left-panel-link" >Request send</button></a></center>
+
+
+          </ul>
+
+
+										</div>
+
+						 			</div>
+
+{% endfor %}
+						 		</div>
+
+ <!-- js -->
+<script src="{% static 'js1/jquery-2.2.3.min.js' %}"></script>
+
+<!-- bootstrap-pop-up -->
+
+<!-- //bootstrap-pop-up -->
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+			<script src="{% static 'js/jarallax.js' %}"></script>
+	<script src="{% static 'js/SmoothScroll.min.js' %}"></script>
+	<script type="text/javascript">
+		/* init Jarallax */
+		$('.jarallax').jarallax({
+			speed: 0.5,
+			imgWidth: 1366,
+			imgHeight: 768
+		})
+	</script>
+
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear'
+				};
+			*/
+
+			$().UItoTop({ easingType: 'easeOutQuart' });
+
+			});
+
+
+	</script>
+
+<!-- //here ends scrolling icon -->
+	</body>
+
+</html>
