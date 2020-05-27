@@ -1,5 +1,6 @@
 import email
 import string
+from pickle import GET
 from random import random
 from datetime import date,datetime
 from django.conf.global_settings import EMAIL_HOST_USER
@@ -113,24 +114,29 @@ def scaling(request,pk):
     pd=patient.objects.get(pk=pk)
     return render(request, 'scaling.html',{'p_data':pd})
 
-def login(request):
+def login(request, POST=None):
 
     if request.method == 'POST':
-        un = request.POST['username']
-        pass1 = request.POST['password']
+        if request.POST['username'] != None:
+            un = request.POST['username']
+            pass1 = request.POST['password']
 
-        user = auth.authenticate(username=un,password=pass1)
+            user = auth.authenticate(username=un,password=pass1)
 
-        if user is not None:
-            print(user.username)
+            if user is not None:
+                print(user.email)
 
-            k = merge.objects.filter(dr_username=user.username)
+                k = merge.objects.filter(dr_username=user.username)
 
-            return render(request, 'showpatient.html',{'doc':k})
+                return render(request, 'showpatient.html',{'doc':k,'a':user.username,'email':user.email})
         else:
             print('invalid' + un + pass1)
     else:
-       return render(request, 'drlogin.html')
+        print(request.GET['time'])
+        if request.GET['time'] != '':
+            send_mail_to_patient(email = request.GET['email'],time = request.GET['time'],date=request.GET['date'])
+        return render(request, 'index.html')
+
 
 def logout(request):
     auth.logout(request)
@@ -197,23 +203,48 @@ def showdr(request,pk):
 
     dd = data1.objects.filter(specialized=pd.disease)
     return render(request, 'showdr.html',{'x':dd})
+###################################################################################
+def send_mail_to_patient(email,date,time):
+    send_mail(
+        "Acceptance of appointment",
+        f"your request for appointment is accepted by dr satinder kaur. you can visit the clinic on {date} at {time}",
+        EMAIL_HOST_USER,
+        [email],
+        fail_silently=False,
+    )
+    print("email sent")
 
-def showpatient(request,pk):
-    if request.method=='POST':
-        x = merge.objects.get(pk=pk)
-        z = x.p_email
 
-        subject = 'hi'
-        message = render_to_string('send_date_time.html', {
-            'x': x,
-        })
-        send_mail(
-            subject,
-            message,
-            EMAIL_HOST_USER,
-            [z],
-            fail_silently=False,
-        )
+########################################################################################3
+
+# def date(request):
+#     print(request.GET['time'])
+#     if request.GET['time'] != '':
+#         send_mail_to_patient(email = request.GET['email'],time = request.GET['time'],date=request.GET['date'])
+#     return render(request, 'index.html')
+
+def showpatient(request):
+
+    # print(request.GET['time'])
+    # if request.GET['time'] != '':
+    #     send_mail_to_patient(email = request.GET['email'],time = request.GET['time'],date=request.GET['date'])
+    # return render(request, 'index.html')
+    # print(request.user)
+    # if request.method=='POST':
+    #     x = merge.objects.get(username=use)
+    #     z = x.p_email
+    #
+    #     subject = 'hi'
+    #     message = render_to_string('send_date_time.html', {
+    #         'x': x,
+    #     })
+    #     send_mail(
+    #         subject,
+    #         message,
+    #         EMAIL_HOST_USER,
+    #         [z],
+    #         fail_silently=False,
+    #     )
 
     doc = merge.objects.all()
     return render(request, 'showpatient.html',{'doc':doc})

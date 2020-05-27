@@ -39,6 +39,8 @@ urlpatterns = [
     path('showdr/<int:pk>', view.showdr, name='showdr'),
     path('showpatient', view.showpatient, name='showpatient'), 
     path('profile', view.profile, name='profile'),
+    # path('date', view.date, name='date'),
+    #path("sendmail/<slug>/<int>/<in>t",view.send_mail_to_patient, name = 'sendmail')
    # path('send_date_time', view.send_date_time, name='profile'),
     # path('', include('send.urls')),
     #path('diseases', view.diseases, name='diseases'),

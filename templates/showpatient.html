@@ -42,8 +42,8 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
 						<div class="w3_agileits_header_text">
 							<ul class="top_agile_w3l_info_icons">
 
-									<li><i class="fa fa-user-circle-o" aria-hidden="true"></i>HI. {{user}}</li>
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-user-circle-o" aria-hidden="true"></i>HI. {{a}}</li>
+									<li><i class="fa fa-envelope-o" aria-hidden="true"></i>{{email}}</li>
 								</ul>
 
 						</div>
@@ -104,7 +104,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
 <!--		</div>-->
 	</div>
 
-<form action="" method="post">
+<form action="" method="GET">
 	{% csrf_token %}
 	<div class="container" >
 {% for d in doc %}
@@ -116,7 +116,7 @@ Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, Son
             <li class="list-group-item list-group-item-success"><i class="fa fa-user-circle-o"style="font-size:20px;"></i>  Patient Name = {{d.p_name}}</li>
             <li class="list-group-item list-group-item-success"><i class="fa fa-user"style="font-size:20px;"></i>   Age ={{d.p_age}}</li>
             <li class="list-group-item list-group-item-success"><i class="fa fa-venus-mars"style="font-size:20px;"></i>   Gender ={{d.p_gender}}</li>
-            <li class="list-group-item list-group-item-success"><i class="fa fa-venus-mars"style="font-size:20px;"></i>   Email ={{d.p_email}}</li>
+            <li class="list-group-item list-group-item-success"><i class="fa fa-venus-mars"style="font-size:20px;"></i>   Email ={{d.p_email}}<input type="email" hidden value = {{d.p_email}}  placeholder="date" name="email"/></li>
             <li class="list-group-item list-group-item-success"><i class="fa fa-plus-circle"style="font-size:20px;"></i>   Diesease ={{d.p_disease}}</li>
               <li class="list-group-item list-group-item-success"><i class="fa fa-calendar"style="font-size:20px;"></i>Date<input type="date" placeholder="date" name="date"/></li>
 
